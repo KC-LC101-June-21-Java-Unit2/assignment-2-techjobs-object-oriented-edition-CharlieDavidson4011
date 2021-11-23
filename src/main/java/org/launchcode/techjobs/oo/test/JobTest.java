@@ -49,7 +49,7 @@ public class JobTest {
                 new CoreCompetency(""));
     }
         @Test
-        public void testSettingJobId() {
+        public void testTestToStringContainsCorrectLabelsAndDataExists() {
     assertEquals(1, testJobObject1.getId());
     assertEquals(2, testJobObject2.getId());
     assertFalse(testJobObject1.getId() == testJobObject2.getId());
@@ -57,7 +57,7 @@ public class JobTest {
     assertEquals(1, testJobObject2.getId() - testJobObject1.getId());
 }
 @Test
-        public void testJobConstructorSetsAllFields() {
+        public void testTestToStringStartsAndEndsWithNewLineCallsAssertions() {
         assertTrue(testJobObject3.getName() instanceof String);
         assertEquals("Product tester", testJobObject3.getName());
         assertTrue(testJobObject3.getEmployer() instanceof Employer);
@@ -74,18 +74,18 @@ public class JobTest {
         assertEquals(false, testJobObject3 == testJobObject4);
     }
     @Test
-    public void testForLeadBlankLine() {     // Check for /n
+    public void testToStringStartsAndEndsWithNewLineExists() {     // Check for /n
         assertTrue(testJobObject1.toString().startsWith("\n")); //(testJobObject3)
 
     }
 
     @Test
-    public void testForTrailBlankLine() {     // Check for /n
-        assertTrue(testJobObject1.toString().endsWith("\n")); //(testJobObject3)
+    public void testToStringStartsAndEndsWithNewLine() {     // Check for /n
+        assertTrue(testJobObject1.toString().endsWith("\n"));
     }
 
     @Test
-    public void testForLabelsWithDataOnNewLines() {
+    public void testTestToStringStartsAndEndsWithNewLineCallsToString() {
 
         String expected = "\n" +
                 "ID: 3\n" +
@@ -97,7 +97,7 @@ public class JobTest {
         assertEquals(expected, testJobObject3.toString());
     }
     @Test
-    public void testForSomeNullFields() {
+    public void testToStringHandlesEmptyField() {
 
         String expected = "\n" +
                 "ID: 5\n" +
@@ -111,7 +111,7 @@ public class JobTest {
     }
 
     @Test
-    public void testForSomeNullFields2() {
+    public void testTestToStringHandlesEmptyFieldExists() {
 
         String expected = "\n" +
                 "ID: 6\n" +
@@ -124,14 +124,14 @@ public class JobTest {
     }
 
     @Test
-    public void testForAllNullFields() {
+    public void testTestToStringHandlesEmptyFieldCallsAssertions() {
 
         String expected = "\nOOPS! This job does not seem to exist.\n";
         assertEquals(expected, testJobObject1.toString());
     }
 
     @Test
-    public void testForAllNullFields2() {
+    public void testTestToStringHandlesEmptyFieldCallsToString() {
 
         String expected = "\nOOPS! This job does not seem to exist.\n";
         assertEquals(expected, testJobObject7.toString());
