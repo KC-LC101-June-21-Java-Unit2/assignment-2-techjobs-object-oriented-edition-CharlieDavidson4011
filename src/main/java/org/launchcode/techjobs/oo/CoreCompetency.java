@@ -1,7 +1,5 @@
 package org.launchcode.techjobs.oo;
 
-import java.util.Objects;
-
 public class CoreCompetency extends JobField {
 
   //  private int id;
@@ -32,7 +30,7 @@ public class CoreCompetency extends JobField {
         if (this == o) return true;
         if (!(o instanceof CoreCompetency)) return false;
         CoreCompetency that = (CoreCompetency) o;
-        return id == that.id;
+        return getId() == that.getId();
     }
 
    // @Override
