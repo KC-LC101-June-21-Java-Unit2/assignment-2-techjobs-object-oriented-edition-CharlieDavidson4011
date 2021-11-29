@@ -3,7 +3,7 @@ package org.launchcode.techjobs.oo;
 import java.util.Objects;
 
 
-public class Job {
+public class Job extends JobField {
 
     private int id;
     private static int nextId = 1;
@@ -87,8 +87,54 @@ public class Job {
         return id;
     }
 
+    @Override
     public String toString() {
+//
+        String nameS = "Data not available";
+        String employerS = "Data not available";
+        String locationS = "Data not available";
+        String positionTypeS = "Data not available";
+        String coreCompetencyS = "Data not available";
 
-return "\n \n";
+
+        boolean nullName = (String.valueOf(name) == null || String.valueOf(name) == "null" ||String.valueOf(name) == "");
+        boolean nullEmployer = (String.valueOf(employer) == null || String.valueOf(employer) == "null" ||String.valueOf(employer) == "");
+//
+        boolean nullLocation = (String.valueOf(location) == null || String.valueOf(location) == "null" ||String.valueOf(location) == "");
+//
+        boolean nullPositionType = (String.valueOf(positionType) == null || String.valueOf(positionType) == "null" ||String.valueOf(positionType) == "");
+        boolean nullCoreCompetency = (String.valueOf(coreCompetency) == null || String.valueOf(coreCompetency) == "null" ||String.valueOf(coreCompetency) == "");
+
+//
+        boolean nullTest = (nullName && nullEmployer && nullLocation && nullPositionType && nullCoreCompetency);
+        String oops = "\nOOPS! This job does not seem to exist.\n";
+
+        if(nullTest) {
+            return oops;
+        } else {
+
+            if(!nullName){
+                nameS = String.valueOf(name);
+            }
+            if(!nullEmployer){
+                employerS = String.valueOf(employer);
+            }
+            if(!nullLocation){
+                locationS = String.valueOf(location);
+            }
+            if(!nullPositionType){
+                positionTypeS = String.valueOf(positionType);
+            }
+            if(!nullCoreCompetency){
+                coreCompetencyS = String.valueOf(coreCompetency);
+            }
+            return "\n" +
+                    "ID: " + id + "\n" +
+                    "Name: " + nameS + "\n" +
+                    "Employer: " + employerS + "\n" +
+                    "Location: " + locationS + "\n" +
+                    "Position Type: " + positionTypeS + "\n" +
+                    "Core Competency: " + coreCompetencyS + "\n";
+        }
     }
 }

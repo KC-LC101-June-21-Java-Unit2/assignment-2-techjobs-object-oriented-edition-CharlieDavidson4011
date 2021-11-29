@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo;
 
+
 import java.util.Objects;
 
 public abstract class JobField {
@@ -39,6 +40,6 @@ public abstract class JobField {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getValue());
+        return Objects.hash(getId(), getValue());  // return Objects.hash(getId()); ???
     }
 }
